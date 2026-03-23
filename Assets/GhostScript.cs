@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GhostScript : MonoBehaviour
 {
@@ -61,6 +62,12 @@ public class GhostScript : MonoBehaviour
         else
         {
             transform.localScale = new Vector3 (0.27f, 0.27f, 0.27f);
+        }
+
+        if (Health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+            Debug.Log("You're Dead");
         }
 
     }   
