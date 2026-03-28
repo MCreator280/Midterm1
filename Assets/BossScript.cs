@@ -26,17 +26,17 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         Text.text = "Boss: " + Health;
+        //  Text.text = "Boss: " + Health;
 
-        int ranGen = Random.Range(1,3);
+        // int ranGen = Random.Range(1,3);
 
-        Timer += Time.deltaTime;
+        // Timer += Time.deltaTime;
 
-        if (Timer >= 5)
-        {
-            Debug.Log(Generator = ranGen);
-            Timer = 0;
-        }
+        // if (Timer >= 5)
+        // {
+        //     Debug.Log(Generator = ranGen);
+        //     Timer = 0;
+        // }
         
 
         if (S2 != null && Generator == 2)

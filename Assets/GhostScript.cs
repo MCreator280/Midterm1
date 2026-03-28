@@ -17,6 +17,10 @@ public class GhostScript : MonoBehaviour
     public TextMeshPro Text;
     public int Health = 5;
 
+    public float TimerInvin = 0f;
+
+    public bool TimerInvinSet = false; 
+
     void Start()
     {
         
@@ -70,6 +74,20 @@ public class GhostScript : MonoBehaviour
             Debug.Log("You're Dead");
         }
 
+        if (TimerInvinSet)
+        {
+            TimerInvin += Time.deltaTime;
+        }
+
+        if (TimerInvin >= 2)
+        {
+            TimerInvinSet = false;
+            TimerInvin = 0;
+            SR.color = Color.white;
+            gameObject.layer = 0;
+        }
+    
+
     }   
 
      private void OnCollisionEnter2D(Collision2D other)
@@ -80,7 +98,16 @@ public class GhostScript : MonoBehaviour
             {
              Health --;
             }
+
+          if (bs!= null)
+            {
+               TimerInvinSet = true;
+               SR.color = Color.red;
+               gameObject.layer = 8;
+            }
+          
         
+
     }
 
 
